@@ -52,7 +52,7 @@ public:
         fake_scan_msg.angle_max = M_PI - angle_max;
         fake_scan_msg.angle_increment = (fake_scan_msg.angle_max - fake_scan_msg.angle_min) / (double)(node_count - 1);
 
-        scan_time = this->now().nanoseconds() * 1E-9;;
+        scan_time = 0.15; // this->now().nanoseconds() * 1E-9;
         fake_scan_msg.scan_time = scan_time;
         fake_scan_msg.time_increment = scan_time / (double)(node_count - 1);
         fake_scan_msg.range_min = min_distance;
