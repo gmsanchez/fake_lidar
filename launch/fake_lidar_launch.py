@@ -7,7 +7,7 @@ from launch_ros.descriptions import ParameterValue
 
 def generate_launch_description():
 
-    use_sim_time = LaunchConfiguration('use_sim_time', default='false')
+    use_sim_time = LaunchConfiguration('use_sim_time')
 
     fake_lidar_node = Node(
         package = 'fake_lidar',
@@ -19,7 +19,7 @@ def generate_launch_description():
     return LaunchDescription([
         DeclareLaunchArgument(
             'use_sim_time',
-            default_value='false',
+            default_value='False',
             description='Use simulation (Gazebo) clock if true'),
         fake_lidar_node,
     ])
